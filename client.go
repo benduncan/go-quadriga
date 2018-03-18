@@ -36,13 +36,13 @@ func (c *Client) URL(res string) string {
 	return fmt.Sprintf("%s%s", c.RootUrl, res)
 }
 
-func (c *Client) GetCurrentTradingInfo(book ...string) (CurrentTrade, error) {
+func (c *Client) GetCurrentTradingInfo(book string) (CurrentTrade, error) {
 	var current CurrentTrade
 
 	// btc_cad is the default book type, allow btc_usd, etc as an argument
 	var args string
 
-	if book[0] != "" {
+	if book != "" {
 		args = fmt.Sprintf("?book=%s", book)
 	}
 

@@ -31,6 +31,19 @@ type LookupOrderResponse struct {
 	Type    string `json:"type"`
 }
 
+type BuyMarketOrderResponse struct {
+	Amount        float64 `json:"amount,string"`
+	OrdersMatched string  `json:"orders_matched"`
+	Book          string  `json:"book"`
+	TransactionID string  `json:"id"`
+}
+
+type BuyMarketOrder struct {
+	Amount float64 `json:"amount,string"`
+	Book   string  `json:"book"`
+	ID     string  `json:"id"`
+}
+
 type TransactionResponse []Transaction
 
 type Transaction struct {
